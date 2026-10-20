@@ -37,4 +37,6 @@ class AmbientMixer {
 document.addEventListener("DOMContentLoaded", () => {
   const app = new AmbientMixer();
   app.init();
+
+  window.app = app;
 });
