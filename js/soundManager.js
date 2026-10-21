@@ -14,6 +14,7 @@ export class SoundManager {
 
       // Add sound to audio elements map
       this.audioElements.set(soundId, audio);
+      return true;
     } catch (error) {
       console.log(`Failed to load sound ${soundId}`);
       return false;
@@ -44,7 +45,7 @@ export class SoundManager {
     }
   }
 
-  // Set volume to a specific sound (0-100)
+  // Set volume for a specific sound (0-100)
   setVolume(soundId, volume) {
     const audio = this.audioElements.get(soundId);
 
@@ -55,7 +56,6 @@ export class SoundManager {
 
     // Convert 0-100 to 0-1
     audio.volume = volume / 100;
-    console.log(`Volume for ${soundId}: ${volume}`);
     return true;
   }
 }
